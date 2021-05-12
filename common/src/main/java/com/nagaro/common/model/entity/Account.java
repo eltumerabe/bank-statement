@@ -1,4 +1,4 @@
-package com.nagaro.dataaccess.entity;
+package com.nagaro.common.model.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

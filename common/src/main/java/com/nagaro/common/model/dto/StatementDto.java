@@ -1,18 +1,20 @@
-package com.nagaro.dataaccess.entity;
+package com.nagaro.common.model.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+import java.util.Date;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Statement {
-    @org.springframework.data.annotation.Id
+public class StatementDto {
     private Long Id;
     private Long AccountId;
-    private String datefield;
-    private String amount;
+    private Date datefield;
+    private BigDecimal amount;
 }

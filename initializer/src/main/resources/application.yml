@@ -7,10 +7,15 @@ spring:
   datasource:
     driver-class-name: net.ucanaccess.jdbc.UcanaccessDriver
     url: jdbc:ucanaccess://D:/accountsdb.accdb;openExclusive=false;ignoreCase=true
-#  jpa:
-#    hibernate:
-#      ddl-auto: update
-#    properties:
-#      dialect: org.hibernate.dialect.SQLServerDialect
-#    archive:
-#      autodetection: class
+
+
+###### session configuration ######
+session:
+  expiration: 864000000 #10 days
+
+###### token configuration ######
+token:
+  secret: jf9i4jgu83nfl0jfu57ejf7
+  prefix: Bearer
+header:
+  authorization: Authorization

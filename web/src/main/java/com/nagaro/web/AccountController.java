@@ -1,7 +1,6 @@
 package com.nagaro.web;
 
-import com.nagaro.common.model.dto.AccountRest;
-import com.nagaro.common.model.ui.AccountDto;
+import com.nagaro.common.model.ui.AccountRest;
 import com.nagaro.service.AccountService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,9 +19,9 @@ public class AccountController {
     @Autowired
     private ModelMapper modelMapper;
     @GetMapping
-    public List<AccountRest> getAccounts(){
-        List<AccountRest> accountRests = new ArrayList<AccountRest>();
-        List<AccountDto> accounts = accountService.getAccounts();
+    public List<com.nagaro.common.model.dto.AccountRest> getAccounts(){
+        List<com.nagaro.common.model.dto.AccountRest> accountRests = new ArrayList<com.nagaro.common.model.dto.AccountRest>();
+        List<AccountRest> accounts = accountService.getAccounts();
         modelMapper.map(accounts,accountRests);
         return accountRests;
     }

@@ -1,4 +1,4 @@
-package com.nagaro.dataaccess.entity;
+package com.nagaro.common.model.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,4 +14,5 @@ public class User {
     private Integer ID;
     private String username;
     private String password;
+    private String role;
 }

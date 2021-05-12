@@ -1,6 +1,6 @@
 package com.nagaro.dataaccess.repository;
 
-import com.nagaro.dataaccess.entity.Account;
+import com.nagaro.common.model.entity.Account;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 

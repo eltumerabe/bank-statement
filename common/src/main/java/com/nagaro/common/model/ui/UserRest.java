@@ -13,4 +13,5 @@ public class UserRest {
     private Integer Id;
     private String username;
     private String password;
+    private String role;
 }

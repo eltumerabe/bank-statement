@@ -1,7 +1,7 @@
 package com.nagaro.service.impl;
 
-import com.nagaro.common.model.ui.AccountDto;
-import com.nagaro.dataaccess.entity.Account;
+import com.nagaro.common.model.entity.Account;
+import com.nagaro.common.model.ui.AccountRest;
 import com.nagaro.dataaccess.repository.AccountRepository;
 import com.nagaro.service.AccountService;
 import org.modelmapper.ModelMapper;
@@ -21,13 +21,13 @@ public class AccountServiceImpl implements AccountService {
     private ModelMapper modelMapper;
 
     @Override
-    public List<AccountDto> getAccounts() {
-        List<AccountDto> accountDtos = new ArrayList<>();
+    public List<AccountRest> getAccounts() {
+        List<AccountRest> accountRests = new ArrayList<>();
         Iterable<Account> all = accountRepository.findAll();
         Iterator<Account> iterator = all.iterator();
         while (iterator.hasNext()) {
-            accountDtos.add(modelMapper.map(iterator.next(), AccountDto.class));
+            accountRests.add(modelMapper.map(iterator.next(), AccountRest.class));
         }
-        return accountDtos;
+        return accountRests;
     }
 }

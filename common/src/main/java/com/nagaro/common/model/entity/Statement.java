@@ -1,4 +1,4 @@
-package com.nagaro.common.model.dto;
+package com.nagaro.common.model.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,7 +9,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class StatementRest {
+public class Statement {
+    @org.springframework.data.annotation.Id
     private Long Id;
     private Long AccountId;
     private String datefield;
