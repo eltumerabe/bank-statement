@@ -5,6 +5,7 @@ import com.nagaro.common.model.dto.UserDto;
 import com.nagaro.common.model.entity.User;
 import com.nagaro.dataaccess.repository.UserRepository;
 import com.nagaro.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 
 @Component
+@Slf4j
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepository userRepository;
@@ -46,7 +48,6 @@ public class UserServiceImpl implements UserService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User byUsername = userRepository.getByUsername(username);
         if (byUsername == null)
-            //throw new UsernameNotFoundException(username);
             throw new EntityNotFoundException(String.class, "username", username);
         return new org.springframework.security.core.userdetails.User(byUsername.getUsername(), byUsername.getPassword(),
                 true,
