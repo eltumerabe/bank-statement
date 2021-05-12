@@ -6,9 +6,16 @@ statements based on some criteria like:*
 * amount range
 
 
+# Technologies userd:
+* java 1.8
+* spring boot 2.4.5 
+* spring security
+* json web token (jwt)
+* spring aop for logging
 
 # Installation guidance
 _The first step is to take the db (accoundb.accdb) from application folder and paste it into your 
 local drive and then point to it in application.yml and then in the root folder you can run:_
 - [x] mvn clean install
 - [x] mvn spring-boot:run
+
