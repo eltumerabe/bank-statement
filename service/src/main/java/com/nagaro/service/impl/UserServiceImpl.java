@@ -1,5 +1,6 @@
 package com.nagaro.service.impl;
 
+import com.nagaro.common.exception.EntityNotFoundException;
 import com.nagaro.common.model.dto.UserDto;
 import com.nagaro.common.model.entity.User;
 import com.nagaro.dataaccess.repository.UserRepository;
@@ -45,7 +46,8 @@ public class UserServiceImpl implements UserService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User byUsername = userRepository.getByUsername(username);
         if (byUsername == null)
-            throw new UsernameNotFoundException(username);
+            //throw new UsernameNotFoundException(username);
+            throw new EntityNotFoundException(String.class, "username", username);
         return new org.springframework.security.core.userdetails.User(byUsername.getUsername(), byUsername.getPassword(),
                 true,
                 true, true,
